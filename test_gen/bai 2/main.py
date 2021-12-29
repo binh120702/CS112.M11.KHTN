@@ -6,7 +6,7 @@ TEST_NAME = "out/input"
 if not os.path.isdir('out'):
 	os.mkdir('out')
 
-LEFT = 1
+LEFT = 10
 NUM_TEST = 10
 for loop_ in range(LEFT,NUM_TEST+1):
 	file_inp = open("in/input"+str(loop_)+".txt", "r")
@@ -50,11 +50,12 @@ for loop_ in range(LEFT,NUM_TEST+1):
 	else:
 		l = 0.0
 		r = 100000000000000.0
-		for _ in range(300):
+		for _ in range(100):
 		    mid = (l+r)/2
 		 
 		    if check(mid):
 		        r = mid
 		    else:
 		        l = mid
-		file.write(str(l) + "\n")
+		format_radius = "{:.2f}".format(l)
+		file.write(str(format_radius) + "\n")
